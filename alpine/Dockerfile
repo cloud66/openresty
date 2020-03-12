@@ -1,6 +1,6 @@
 FROM alpine:3.3
 
-ENV OPENRESTY_VERSION 1.9.7.3
+ENV OPENRESTY_VERSION 1.15.8.2
 ENV OPENRESTY_PREFIX /opt/openresty
 ENV NGINX_PREFIX /opt/openresty/nginx
 ENV VAR_PREFIX /var/nginx
@@ -60,4 +60,4 @@ WORKDIR $NGINX_PREFIX/
 ONBUILD RUN rm -rf conf/* html/*
 ONBUILD COPY nginx $NGINX_PREFIX/
 
-CMD ["nginx", "-g", "daemon off; error_log /dev/stderr info;"]
+CMD ["nginx", "-g", "daemon off;"]
